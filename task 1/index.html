@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Form</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+        }
+
+        .form-header {
+            border-bottom: 1px solid #dadce0;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+        }
+
+        .form-title {
+            color: #202124;
+            font-size: 28px;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        .form-description {
+            color: #5f6368;
+            font-size: 14px;
+            margin-top: 12px;
+        }
+
+        .form-section {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 16px;
+            font-weight: 500;
+            color: #202124;
+            margin-bottom: 8px;
+        }
+
+        .required::after {
+            content: " *";
+            color: #d93025;
+        }
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #202124;
+            box-sizing: border-box;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            border-color: #1a73e8;
+            outline: none;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .radio-group {
+            margin-top: 8px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .radio-input {
+            margin-right: 10px;
+        }
+
+        .submit-button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #1558c9;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+        }
+
+        .required-note {
+            color: #d93025;
+            font-size: 12px;
+            margin-top: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <h1 class="form-title">Google Form-like Web Form</h1>
+            <p class="form-description">Please fill out the form below with your details</p>
+        </div>
+
+        <form action="#" method="POST">
+            <div class="form-section">
+                <label class="form-label required" for="fullName">Full Name</label>
+                <input class="form-input" type="text" id="fullName" name="fullName" required>
+            </div>
+
+            <div class="form-section">
+                <label class="form-label required" for="contactNumber">Contact Number</label>
+                <input class="form-input" type="tel" id="contactNumber" name="contactNumber" required>
+            </div>
+
+            <div class="form-section">
+                <label class="form-label required" for="address">Address</label>
+                <textarea class="form-textarea" id="address" name="address" required></textarea>
+            </div>
+
+            <div class="form-section">
+                <label class="form-label required" for="companyName">Company Name</label>
+                <input class="form-input" type="text" id="companyName" name="companyName" required>
+            </div>
+
+            <div class="form-section">
+                <label class="form-label required" for="email">Email Address</label>
+                <input class="form-input" type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-section">
+                <label class="form-label required" for="department">Department</label>
+                <select class="form-select" id="department" name="department" required>
+                    <option value="" disabled selected>Select your department</option>
+                    <option value="HR">HR</option>
+                    <option value="Sales">Sales</option>
+                    <option value="Development">Development</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <label class="form-label required">Gender</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input class="radio-input" type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">Male</label>
+                    </div>
+                    <div class="radio-option">
+                        <input class="radio-input" type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                    <div class="radio-option">
+                        <input class="radio-input" type="radio" id="prefernot" name="gender" value="prefer_not_to_say">
+                        <label for="prefernot">Prefer not to say</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <button class="submit-button" type="submit">Submit</button>
+            </div>
+
+            <div class="required-note">* Required fields</div>
+        </form>
+    </div>
+</body>
+</html>
