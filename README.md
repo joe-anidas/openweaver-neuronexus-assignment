@@ -1,7 +1,8 @@
 DATA CORP INTERNSHIP:
-
 https://joeben2211.neocities.org/table/ 
+
 https://joeben2211.neocities.org/invoice/ 
+
 https://joeben2211.neocities.org/plot/
 
 BANANA THREADS:
