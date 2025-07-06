@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Register Plot</title>
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <link rel="stylesheet" href="1.css">
+  <script src="1.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    
+
+            <form id="page1">
+              <h4>Register Plot Details</h4>
+
+              <div>
+                <div>
+                  <div>
+
+                    <input type="text" id="reg-0026" placeholder="S.No">
+                  </div>
+                </div>
+                <div>
+                  <div>
+
+                    <select id="garden-name">
+                      <option>Select Nagar/Garden</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <div>
+
+                    <input type="text" id="plot-no" placeholder="Select Plot No">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div>
+                  <div>
+
+                    <input type="text" id="plot-extension" placeholder="Total Plot Extension in Sqft/Sqmt">
+                  </div>
+                </div>
+                <div>
+                  <div>
+
+                    <input type="text" id="doc-number" placeholder="Plot Registration Document Number">
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <input type="text" id="reg-date" placeholder="Plot Registration Date">
+
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div>
+                  <div>
+
+                    <input type="text" id="patta-chitta" placeholder="Patta/Chitta No">
+                  </div>
+                </div>
+                <div>
+                  <div>
+
+                    <input type="text" id="ts-no" placeholder="T.S.No">
+                  </div>
+                </div>
+                <div>
+                  <div>
+
+                    <input type="text" id="ward-block" placeholder="Ward/Block">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div>
+                  <div>
+
+                    <input type="text" id="plot-rate" placeholder="Plot Rate/Sqft">
+                  </div>
+                </div>
+                <div>
+                  <div>
+
+                    <select id="employee">
+                      <option>Name Refered By</option>
+
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <div>
+
+                    <input type="text" id="alt-phone" placeholder="Alternative Phone Number">
+                  </div>
+                </div>
+              </div>
+              <h4>Enter Plot Four Side Extension Value in Sqft/Sqmt</h4>
+              <div class="container2">
+                <table id="dynamicTable">
+                  <thead class="table-header">
+                    <tr>
+                      <th></th>
+                      <th></th>
+                      <th>PLOT NO</th>
+                      <th>PLOT EXTENSION</th>
+                      <th>NORTH</th>
+                      <th>EAST</th>
+                      <th>WEST</th>
+                      <th>SOUTH</th>
+                      <th>PLOT VALUE</th>
+                      <th>STATUS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><button class="delete-btn"><i class="mdi mdi-delete"></i></button></td>
+                      <td><button class="add-row"><i class="mdi mdi-plus-circle"></i></button></td>
+                      <td><input type="text" class="table-input"></td>
+                      <td><input type="text" class="table-input"></td>
+                      <td><input type="text" class="table-input"></td>
+                      <td><input type="text" class="table-input"></td>
+                      <td><input type="text" class="table-input"></td>
+                      <td><input type="text" class="table-input"></td>
+                      <td><input type="text" class="table-input plot-value"></td>
+                      <td><input type="text" class="table-input" placeholder="UnSold"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <table class="registration-table">
+                <tr>
+                  <th colspan="2">REGISTRATION OFFICE DETAILS</th>
+                </tr>
+                <tr>
+                  <td>Registration District</td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td>Registration Sub-District</td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td>Town/Village</td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td>Revenue Taluk</td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td>Sub Registrar</td>
+                  <td><input type="text"></td>
+                </tr>
+              </table>
+              <div class="button-container">
+                <button type="button">← Previous</button>
+                <button type="button" onclick="nextPage1()">Next →</button>
+              </div>
+            </form>
+            
+                      <form id="page2" class="hidden">
+                        <h4>Customer Details</h4>
+                        <div>
+                          <div>
+                            <div><input type="text" placeholder="Enter Plot Buyer Name"></div>
+                          </div>
+                          <div>
+                            <div><input type="text" placeholder="Enter Father Name"></div>
+                          </div>
+                          <div>
+                            <div>
+                              <select>
+                                <option>Select District</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div>
+                            <div><input type="text" placeholder="Pincode"></div>
+                          </div>
+                          <div>
+                            <div><input type="text" placeholder="Taluk Name"></div>
+                          </div>
+                          <div>
+                            <div><input type="text" placeholder="Village/Town Name"></div>
+                          </div>
+                        </div>
+                        <div>
+                          <div>
+                            <div><input type="text" placeholder="Street Address"></div>
+                          </div>
+                          <div>
+                            <div><input type="text" placeholder="Phone Number 1"></div>
+                          </div>
+                          <div>
+                            <div><input type="text" placeholder="Phone Number 2"></div>
+                          </div>
+                        </div>
+                        <div>
+                          <div>
+                            <div> <select>
+                                <option>Id Proof</option>
+                              </select></div>
+                          </div>
+                          <div>
+                            <div><input type="text" placeholder="Aadhar"></div>
+                          </div>
+                          <div></div>
+                        </div>
+                        <div class="button-container">
+                          <button type="button" onclick="prevPage1()">← Previous</button>
+                          <button type="button" onclick="nextPage2()">Next →</button>
+                        </div>
+                      </form>
+                      <form id="page3" class="hidden">
+                        <h4>Payment Details</h4>
+                        <div>
+                          <div>
+                            <div><select>
+                                <option>Mode of Payment</option>
+                                <option>Cash</option>
+                                <option>Cheque</option>
+                                <option>UPI</option>
+                                <option>NEFT/RTGS</option>
+                              </select></div>
+                          </div>
+                          <div>
+                            <div><input type="text" placeholder="Cash"></div>
+                          </div>
+                          <div></div>
+                        </div>
+                        <div class="button-container">
+                          <button type="button" onclick="prevPage2()">← Previous</button>
+                          <button type="button" onclick="nextPage3()">Next →</button>
+                        </div>
+                      </form>
+                      <form id="page4" class="hidden">
+                        <h4>Upload Documents</h4>
+
+                        <div class="upload-container">
+                          <div class="upload-box">
+                            <label>Upload Registered Title Deed Document</label>
+                            <input type="file">
+                          </div>
+                          <div class="upload-box">
+                            <label>Upload Plot Sketch</label>
+                            <input type="file">
+                          </div>
+                        </div>
+                        <div class="button-container">
+                          <button type="button" onclick="prevPage3()">← Previous</button>
+                          <button type="submit">Submit</button>
+                        </div>
+                      </form>
+                 
+   
+        
+
+</body>
+
+</html>

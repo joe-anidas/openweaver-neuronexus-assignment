@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table Task-2</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f9;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+      padding: 10px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .table-input {
+      width: 100%;
+      padding: 5px;
+      border: none;
+      background-color: transparent;
+      transition: background-color 0.3s;
+    }
+
+    .table-input:focus {
+      border: 2px solid rgb(126, 14, 179);
+      background-color: #f4f4f9;
+      outline: none;
+    }
+
+    button {
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    .icon {
+      width: 30px; 
+      height: 30px; 
+      pointer-events: none;
+    }
+
+    button:hover .icon {
+      filter: brightness(0.8); 
+    }
+
+    #submitTable {
+      background-color: #007bff;
+      color: white;
+      border: 2px solid #0056b3;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      text-align: center;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    #submitTable:hover {
+      background-color: #0056b3;
+    }
+
+    td:nth-child(10) input.table-input {
+      text-align: center; 
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>TABLE TASK-2</h2>
+    <table id="dynamicTable">
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>PLOT NO</th>
+          <th>PLOT EXTENSION</th>
+          <th>NORTH</th>
+          <th>EAST</th>
+          <th>WEST</th>
+          <th>SOUTH</th>
+          <th>PLOT VALUE</th>
+          <th>STATUS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <button class="delete-btn">
+              <img src="delete.png" alt="Delete" class="icon">
+            </button>
+          </td>
+          <td>
+            <button class="add-row">
+              <img src="add.png" alt="Add" class="icon">
+            </button>
+          </td>
+          <td><input type="text" class="table-input"></td>
+          <td><input type="text" class="table-input"></td>
+          <td><input type="text" class="table-input"></td>
+          <td><input type="text" class="table-input"></td>
+          <td><input type="text" class="table-input"></td>
+          <td><input type="text" class="table-input"></td>
+          <td><input type="text" class="table-input plot-value"></td>
+          <td><input type="text" class="table-input" placeholder="UnSold"></td>
+        </tr>
+      </tbody>
+    </table>
+    <center><button id="submitTable">Submit</button></center>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      const table = $("#dynamicTable tbody");
+
+      const updateAddButtonVisibility = () => {
+        table.find("tr .add-row").hide();
+        table.find("tr:last-child .add-row").show();
+      };
+
+      const addRow = () => {
+        const newRow = `
+          <tr>
+            <td>
+              <button class="delete-btn">
+                <img src="delete.png" alt="Delete" class="icon">
+              </button>
+            </td>
+            <td>
+              <button class="add-row">
+                <img src="add.png" alt="Add" class="icon">
+              </button>
+            </td>
+            <td><input type="text" class="table-input"></td>
+            <td><input type="text" class="table-input"></td>
+            <td><input type="text" class="table-input"></td>
+            <td><input type="text" class="table-input"></td>
+            <td><input type="text" class="table-input"></td>
+            <td><input type="text" class="table-input"></td>
+            <td><input type="text" class="table-input plot-value"></td>
+            <td><input type="text" class="table-input" placeholder="UnSold"></td>
+          </tr>`;
+        table.append(newRow);
+        updateAddButtonVisibility();
+      };
+
+      const deleteRow = (button) => {
+        $(button).closest("tr").remove();
+        updateAddButtonVisibility();
+      };
+
+      $(document).on("click", ".add-row", function () {
+        addRow();
+      });
+
+      $(document).on("click", ".delete-btn", function () {
+        deleteRow(this);
+      });
+
+      $(document).on("keydown", ".plot-value", function (e) {
+        if (e.key === "Tab") {
+          e.preventDefault();
+          const currentRow = $(this).closest("tr");
+          const nextRow = currentRow.next();
+          if (nextRow.length === 0) {
+            addRow();
+          }
+          currentRow.next().find("td:nth-child(3) .table-input").focus();
+        }
+      });
+
+      $("#submitTable").on("click", function () {
+        const rows = table.find("tr").map(function () {
+          return $(this)
+            .find("input")
+            .map(function () {
+              return $(this).val();
+            })
+            .get();
+        }).get();
+
+        alert(JSON.stringify(rows, null, 2));
+      });
+
+      updateAddButtonVisibility();
+    });
+  </script>
+</body>
+</html>

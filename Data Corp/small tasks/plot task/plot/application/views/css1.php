@@ -1,0 +1,147 @@
+<style>
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .button-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f9;
+  }
+
+  .container2 {
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .container {
+    width: 70%;
+
+    margin: 0 auto;
+  }
+
+  h2,
+  h4 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+
+  .table-header th {
+    background-color: lightgray;
+  }
+
+  th,
+  td {
+    border-bottom: 0px solid #ddd;
+    text-align: center;
+    padding: 10px;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  .table-input {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    transition: background-color 0.3s;
+  }
+
+  .table-input:focus {
+    border: 2px solid rgb(126, 14, 179);
+    background-color: #f4f4f9;
+    outline: none;
+  }
+
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  .upload-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .upload-box {
+    flex: 1;
+    margin-right: 10px;
+  }
+
+  .upload-box:last-child {
+    margin-right: 0;
+  }
+
+  .upload-box label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .upload-box input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+  }
+
+  button:hover .icon {
+    filter: brightness(0.8);
+  }
+
+  #submitTable {
+    background-color: #007bff;
+    color: white;
+    border: 2px solid #0056b3;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  #submitTable:hover {
+    background-color: #0056b3;
+  }
+
+  td:nth-child(10) input.table-input {
+    text-align: center;
+  }
+
+  .registration-table input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .registration-table tr,
+  td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 10px;
+  }

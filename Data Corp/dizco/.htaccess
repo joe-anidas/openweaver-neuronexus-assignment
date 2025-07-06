@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Remove index.php from URL
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php/$1 [L]
+
+    # Allow only necessary files
+    <FilesMatch "\.(htaccess|htpasswd|config|ini|log|sh)$">
+        Order Allow,Deny
+        Deny from all
+    </FilesMatch>
+</IfModule>

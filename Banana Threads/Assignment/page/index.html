@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banana Threads</title>
+  <link rel="icon" type="image/png" href="../images/logo_no_bg.png">
+
+  <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="header-left">
+        <a href="/" class="logo">
+          <img src="../images/logo.png" alt="Banana Threads Logo" class="logo-img">
+        </a>
+        <nav class="main-nav">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/catalog" class="nav-link">Catalog</a>
+          <a href="/contact" class="nav-link">Contact</a>
+        </nav>
+      </div>
+      <div class="header-right">
+        <button class="icon-btn">
+          <i class="fas fa-search"></i>
+        </button>
+        <button class="icon-btn">
+          <i class="fas fa-user"></i>
+        </button>
+        <button class="icon-btn cart-btn">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container main-content">
+    <div class="product-grid">
+      <!-- Product Gallery -->
+      <div class="product-gallery">
+        <div class="main-image-container">
+          <img id="main-product-image" src="../images/shirt.png" alt="Banana Bliss Oversized T-shirt" class="main-product-image">
+        </div>
+        <div class="thumbnail-container">
+          <button class="thumbnail-btn active" data-image="../images/shirt.png">
+            <img src="../images/shirt.png" alt="Product thumbnail 1" class="thumbnail-img">          </button>
+          <button class="thumbnail-btn" data-image="../images/shirt2.png">
+            <img src="../images/shirt2.png" alt="Product thumbnail 2" class="thumbnail-img">          </button>
+        </div>
+      </div>
+
+      <!-- Product Info -->
+      <div class="product-info">
+        <p class="store-name">MY STORE</p>
+        <h1 class="product-title">BANANA BLISS <br> OVERSIZED T-SHIRT</h1>
+        
+        <!-- Size Chart CTA -->
+        <button class="size-chart-btn" id="size-chart-btn">Size Chart</button>
+        
+        <div class="product-price">
+          <p class="price">Rs. 1,178.82</p>
+          <p class="price-info">
+            Taxes included. <a href="#" class="text-link">Shipping</a> calculated at checkout.
+          </p>
+        </div>
+
+        <!-- Size Selection -->
+        <div class="size-selection">
+          <p class="section-label">Size</p>
+          <div class="size-buttons">
+            <button class="size-btn" data-size="S">S</button>
+            <button class="size-btn" data-size="M">M</button>
+            <button class="size-btn active" data-size="L">L</button>
+            <button class="size-btn" data-size="XL">XL</button>
+            <button class="size-btn" data-size="XXL">XXL</button>
+          </div>
+        </div>
+
+        <!-- Quantity -->
+        <div class="quantity-section">
+          <p class="section-label">Quantity</p>
+          <div class="quantity-selector">
+            <button class="quantity-btn minus-btn">
+              <i class="fas fa-minus"></i>
+            </button>
+            <input type="number" min="1" value="1" class="quantity-input" id="quantity-input" readonly>
+            <button class="quantity-btn plus-btn">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+          <button class="add-to-cart-btn" id="add-to-cart-btn">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Add to cart</span>
+          </button>
+          <button class="buy-now-btn">Buy it now</button>
+        </div>
+
+        <!-- Product Description -->
+        <div class="product-description">
+          <h3 class="description-title">Description</h3>
+          <p class="description-text">
+            The Banana Bliss Oversized T-shirt features a relaxed fit with a vibrant graphic print. Made from 100%
+            premium cotton for ultimate comfort. Perfect for casual everyday wear.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recommended Products Section -->
+    <div class="recommended-section">
+      <h2 class="section-title">You May Also Like</h2>
+      <div class="recommended-container">
+        <button class="scroll-btn scroll-left-btn">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        
+        <div class="recommended-products" id="recommended-products">
+          <!-- Product 1 -->
+          <div class="recommended-product">
+            <div class="recommended-image-container">
+              <img src="../images/hoodie.jpg" alt="Banana Vibes Hoodie" class="recommended-image">
+            </div>
+            <h3 class="recommended-title">Banana Vibes Hoodie</h3>
+            <p class="recommended-price">Rs. 1,899.99</p>
+          </div>
+          
+          <!-- Product 2 -->
+          <div class="recommended-product">
+            <div class="recommended-image-container">
+              <img src="../images/printshirt.jpg" alt="Tropical Print Shirt" class="recommended-image">
+            </div>
+            <h3 class="recommended-title">Tropical Print Shirt</h3>
+            <p class="recommended-price">Rs. 999.99</p>
+          </div>
+          
+          <!-- Product 3 -->
+          <div class="recommended-product">
+            <div class="recommended-image-container">
+              <img src="../images/cap.jpg" alt="Banana Threads Cap" class="recommended-image">
+            </div>
+            <h3 class="recommended-title">Banana Threads Cap</h3>
+            <p class="recommended-price">Rs. 599.99</p>
+          </div>
+          
+          <!-- Product 4 -->
+          <div class="recommended-product">
+            <div class="recommended-image-container">
+              <img src="../images/sweatshirt.jpg" alt="Graphic Print Sweatshirt" class="recommended-image">
+            </div>
+            <h3 class="recommended-title">Graphic Print Sweatshirt</h3>
+            <p class="recommended-price">Rs. 1,499.99</p>
+          </div>
+          
+          <!-- Product 5 -->
+          <div class="recommended-product">
+            <div class="recommended-image-container">
+              <img src="../images/shorts.jpg" alt="Banana Bliss Shorts" class="recommended-image">
+            </div>
+            <h3 class="recommended-title">Banana Bliss Shorts</h3>
+            <p class="recommended-price">Rs. 799.99</p>
+          </div>
+          
+          <!-- Product 6 -->
+          <div class="recommended-product">
+            <div class="recommended-image-container">
+              <img src="../images/tshirt.webp" alt="Retro Logo Tee" class="recommended-image">
+            </div>
+            <h3 class="recommended-title">Retro Logo Tee</h3>
+            <p class="recommended-price">Rs. 899.99</p>
+          </div>
+          
+          <!-- Product 7 -->
+          <div class="recommended-product">
+            <div class="recommended-image-container">
+              <img src="../images/joggers.jpg" alt="Banana Threads Joggers" class="recommended-image">
+            </div>
+            <h3 class="recommended-title">Banana Threads Joggers</h3>
+            <p class="recommended-price">Rs. 1,299.99</p>
+          </div>
+          
+          <!-- Product 8 -->
+          <div class="recommended-product">
+            <div class="recommended-image-container">
+              <img src="../images/tshirt2.jpg" alt="Colorblock Tee" class="recommended-image">
+            </div>
+            <h3 class="recommended-title">Colorblock Tee</h3>
+            <p class="recommended-price">Rs. 999.99</p>
+          </div>
+        </div>
+        
+        <button class="scroll-btn scroll-right-btn">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Size Chart Modal -->
+  <div id="size-chart-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Size Chart</h3>
+        <button id="close-modal-btn" class="close-modal-btn">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="size-chart-image-container">
+          <img src="../images/sizechart.png" alt="Size Chart" class="size-chart-image">
+        </div>
+        <div class="size-chart-info">
+          <p class="size-chart-text">How to measure:</p>
+          <ul class="size-chart-list">
+            <li>Chest: Measure around the fullest part of your chest, keeping the tape horizontal.</li>
+            <li>Waist: Measure around your natural waistline, keeping the tape comfortably loose.</li>
+            <li>Hips: Measure around the fullest part of your hips.</li>
+            <li>Length: Measure from the highest point of the shoulder to the bottom hem.</li>
+          </ul>
+          <p class="size-chart-text size-chart-note">If you're between sizes, we recommend sizing up for an oversized fit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3 class="footer-title">About Banana Threads</h3>
+          <p class="footer-text">
+            We create comfortable, stylish clothing with a focus on quality and sustainability.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">FAQs</a></li>
+            <li><a href="#" class="footer-link">Shipping Policy</a></li>
+            <li><a href="#" class="footer-link">Returns & Exchanges</a></li>
+            <li><a href="#" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-title">Newsletter</h3>
+          <p class="footer-text">Subscribe to get special offers and updates.</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Your email" class="newsletter-input">
+            <button class="newsletter-btn">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">© 2025 Banana Threads. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
